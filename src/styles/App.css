@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Times New Roman', Times, serif;
+} 
+
+.image {
+  width: 93%;
+  float:right;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.sideBar {
+  float: left;
+  width: 5%;
+  height: 100vh;
+  padding: 15px;
+  border: 2px solid teal;
+  justify-content: space-between;
+  align-items: center;
+}
