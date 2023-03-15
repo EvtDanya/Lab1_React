@@ -3,7 +3,10 @@ import { saveAs } from 'file-saver'
 
 const Image = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-
+// TODO
+// кнопку надо перенести в sidebar
+// наладить функционал сохранения
+// предусмотреть загрузку ТОЛЬКО изображений
     const saveImage = () => {//функция сохранения на пк отредактированного фото
         const link = document.createElement('a')
         link.download = 'image_edit.jpg'
@@ -13,6 +16,7 @@ const Image = () => {
 
     return (
         <div className='image'>
+        <h1>Choose file</h1>
         {selectedImage 
             ?//если выбрано изображение
             <div>
@@ -32,7 +36,8 @@ const Image = () => {
             onChange={(event) => {
             setSelectedImage(event.target.files[0]);
             }}
-        />
+
+            />
         }      
     </div>
     );

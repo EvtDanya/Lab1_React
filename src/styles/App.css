@@ -9,10 +9,13 @@ body {
 } 
 
 .image {
+  float: right;
   width: 93%;
-  float:right;
-  margin-top: 10px;
+  height: 90vh;
   margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 2px solid teal;
 }
 
 .sideBar {
@@ -23,4 +26,13 @@ body {
   border: 2px solid teal;
   justify-content: space-between;
   align-items: center;
+}
+
+.sliderBar {
+  float: right;
+  width: 93%;
+  height: 8vh;
+  vertical-align: bottom;
+  margin-right: 10px;
+  border: 2px solid teal;
 }
