@@ -15,28 +15,29 @@ const Image = () => {
     }
 
     return (
-        <div className='image'>
-        <h1>Choose file</h1>
+        <div className='imageContainer'>
+        
         {selectedImage 
             ?//если выбрано изображение
             <div>
-            <img
+            <img 
                 alt="not found"          
                 src={URL.createObjectURL(selectedImage)}
-                width={'100%'}
-                height={'100%'}
+                max-width={'100%'}
+                height={'auto'}
+                max-height={'100%'}
             />
             <br/>{/*скачать картинку обратно на пк*/}
-            <button onClick={() => saveImage}>Download</button>
+
             </div>
             ://иначе отобразить инпут
             <input 
-            type="file"
-            name="myImage"
-            onChange={(event) => {
-            setSelectedImage(event.target.files[0]);
+                type="file"
+                accept="image/*" 
+                className='fileInput'
+                onChange={(event) => {
+                setSelectedImage(event.target.files[0]);
             }}
-
             />
         }      
     </div>

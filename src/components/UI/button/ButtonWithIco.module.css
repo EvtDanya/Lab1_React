@@ -1,0 +1,28 @@
+.btnWthIco, .delBtn, .saveBtn {
+    padding: 5px 15px;
+    color: teal;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid teal;
+    cursor: pointer;
+    width: 80%;
+    height: 6%;
+    margin-left: 5%;
+    margin-top: 5%; 
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-content: space-between;
+    cursor: pointer; 
+    
+} 
+
+.delBtn {
+    background-color: rgb(243, 77, 77);
+}
+
+.saveBtn {
+    background-color: rgb(77, 255, 77);
+}
+
+

@@ -8,31 +8,42 @@ body {
   font-family:'Times New Roman', Times, serif;
 } 
 
-.image {
+.imageContainer {
   float: right;
-  width: 93%;
+  width: 93vw;
   height: 90vh;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
   border: 2px solid teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textSideBar {
+  margin-top: 15%;
+  text-align: center;
 }
 
 .sideBar {
-  float: left;
-  width: 5%;
+  width: 5vw;
   height: 100vh;
-  padding: 15px;
+  float: left;
   border: 2px solid teal;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .sliderBar {
   float: right;
-  width: 93%;
+  width: 93vw;
   height: 8vh;
   vertical-align: bottom;
   margin-right: 10px;
   border: 2px solid teal;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 

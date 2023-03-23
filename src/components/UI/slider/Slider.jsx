@@ -1,10 +1,11 @@
 import React from 'react';
+import classes from './Slider.module.css';
 
-const Slider = () => {
+const Slider = ({children, ...props}) => {
     return (
-        <div>
-            
-        </div>
+        <input type='range' {...props} className={classes.slider}>
+            {children}
+        </input>
     );
 };
 
