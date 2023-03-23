@@ -18,12 +18,12 @@ const Sidebar = () => {
             <ButtonWithIco />
             <ButtonWithIco />
             <ButtonWithIco />
-            <ButtonWithIco />
+            <ButtonWithIco type='brightnessBtn'/>
             <ButtonWithIco type='plusBtn'/>
             <ButtonWithIco type='minusBtn'/>
             <h1 className='textSideBar'>File</h1>
-            <ButtonWithIco type='saveBtn'>Save</ButtonWithIco>
-            <ButtonWithIco type='delBtn' onClick={delConfirmation}>Delete</ButtonWithIco>
+            <ButtonWithIco type='saveBtn' />
+            <ButtonWithIco type='delBtn' onClick={delConfirmation} />
             
         </div>
     );

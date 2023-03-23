@@ -1,4 +1,4 @@
-.btnWthIco, .delBtn, .saveBtn {
+.btnWthIco, .delBtn, .saveBtn, .lensBtn {
     padding: 5px 15px;
     color: teal;
     font-size: 14px;
@@ -6,16 +6,22 @@
     border: 1px solid teal;
     cursor: pointer;
     width: 80%;
-    height: 6%;
-    margin-left: 5%;
-    margin-top: 5%; 
+    height: 7%;
+    margin-left: 9%;
+    margin-top: 7%; 
     background-size: 70% 70%;
     background-repeat: no-repeat;
     background-position: center center;
-    justify-content: space-between;
     cursor: pointer; 
-    
 } 
+
+.lensBtn:active {
+    
+}
+
+.btnWthIco:active {
+    margin-left:50px;
+}
 
 .delBtn {
     background-color: rgb(243, 77, 77);

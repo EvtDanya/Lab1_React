@@ -6,15 +6,16 @@ const ButtonWithIco = ({type, children, ...props}) => {
     var icons = {
         'plusBtn':  require('./plus.png'),
         'minusBtn':  require('./minus.png'),
-        'delBtn':  require('./plus.png'),
-        'saveBtn':  require('./plus.png'),
-        'plusBtn':  require('./plus.png'),
+        'delBtn':  require('./delete.png'),
+        'saveBtn':  require('./save.png'),
+        'brightnessBtn':  require('./brightness.png'),
         'plusBtn':  require('./plus.png'),
     }
 
     var className
     if (type === 'delBtn')  className = classes.delBtn
     else if (type === 'saveBtn') className = classes.saveBtn
+    else if (type === 'plusBtn' || type === 'minusBtn') className = classes.lensBtn
     else className = classes.btnWthIco
     
     return (
