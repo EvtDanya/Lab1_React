@@ -3,25 +3,25 @@ import classes from './ButtonWithIco.module.css';
 
 
 const ButtonWithIco = ({type, children, ...props}) => {
-    var icons = {
+    const icons = {
         'plusBtn':  require('./plus.png'),
         'minusBtn':  require('./minus.png'),
         'delBtn':  require('./delete.png'),
         'saveBtn':  require('./save.png'),
         'brightnessBtn':  require('./brightness.png'),
-        'plusBtn':  require('./plus.png'),
+        'blurBtn':  require('./blur.png')
     }
 
-    var className = classes.btnWthIco
+    let className = classes.btnWthIco
     if (type === 'delBtn')  className = classes.delBtn
     else if (type === 'saveBtn') className = classes.saveBtn
     else if (type === 'plusBtn' || type === 'minusBtn') className = classes.lensBtn
     
     return (
         <button 
-            {...props} 
             className={className} 
             style={{'backgroundImage': 'url(' + icons[type] + ')'}}
+            {...props} 
         > 
             {children}  
         </button>

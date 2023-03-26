@@ -18,9 +18,7 @@ const Image = ({ image, setImage, imageStyle }) => {
                 src={URL.createObjectURL(image)} 
                 style={imageStyle}             
             />
-            {/*скачать картинку обратно на пк*/}
             </div>
-            
             ://иначе отобразить инпут
             <FileInput select={selectImage}/>
         }      

@@ -1,20 +1,25 @@
 import React from 'react';
 import ButtonWithIco from './UI/button/ButtonWithIco';
 
-const Sidebar = ({ delImage, saveImage }) => {
-    const delConfirmation = () => {
+const Sidebar = ({ delImage, saveImage, tools, setValues, setSelectedTool, setSliderCurrVal }) => {
+   
+    const delConfirmation = () => {//удаление
         if (window.confirm('Are you sure you want to delete this item?'))
             delImage()
     }
 
+    const selectTool = (e) => {
+        setSelectedTool(e.currentTarget.id)//выбрать айди текущего фильтра
+        setSliderCurrVal(tools[e.currentTarget.id].currentValue)// добавить для слайдера текущее значение у фильтра
+        setValues(tools[e.currentTarget.id].values)// отправить в компонент со слайдером информацию о единицах
+    }
+
     return (
         <div className='sideBar'>
-        {/* Боковая панель с функциональными кнопками(также кнопка сохранения изображения и удаления) */}
-            <ButtonWithIco />
-            <ButtonWithIco />
-            <ButtonWithIco />
-            <ButtonWithIco />
-            <ButtonWithIco type='brightnessBtn'/>
+        {/* Боковая панель с функциональными кнопками*/}
+            {tools.map((tool, index) => 
+               <ButtonWithIco type={tool.name+'Btn'} onClick={selectTool} key={index} id={index}/>
+                )}
             <ButtonWithIco type='plusBtn'/>
             <ButtonWithIco type='minusBtn'/>
             <h1 className='textSideBar'>File</h1>
@@ -24,4 +29,4 @@ const Sidebar = ({ delImage, saveImage }) => {
     );
 };
 
-export default Sidebar;
+export default Sidebar;     
