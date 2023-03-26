@@ -1,14 +1,10 @@
 import React from 'react';
 import ButtonWithIco from './UI/button/ButtonWithIco';
 
-const Sidebar = () => {
+const Sidebar = ({ delImage, saveImage }) => {
     const delConfirmation = () => {
-        if (window.confirm('Are you sure you want to delete this item?')) {
-            // del photo
-        }
-        else {
-            // dont del photo
-        }
+        if (window.confirm('Are you sure you want to delete this item?'))
+            delImage()
     }
 
     return (
@@ -22,7 +18,7 @@ const Sidebar = () => {
             <ButtonWithIco type='plusBtn'/>
             <ButtonWithIco type='minusBtn'/>
             <h1 className='textSideBar'>File</h1>
-            <ButtonWithIco type='saveBtn' />
+            <ButtonWithIco type='saveBtn' onClick={saveImage} />
             <ButtonWithIco type='delBtn' onClick={delConfirmation} />
         </div>
     );

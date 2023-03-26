@@ -9,11 +9,11 @@ const FileInput = ({select, children, ...props}) => {
 
     return (
         <input 
-        type='file' 
-        accept="image/*"
-        {...props} 
-        className={classes.slider}
-        onChange={inputChanged}
+            type='file' 
+            accept="image/*"
+            {...props} 
+            className={classes.slider}
+            onChange={inputChanged}
         >
             {children}
         </input>

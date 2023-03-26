@@ -1,35 +1,22 @@
 import React, {useState} from 'react';
-import { saveAs } from 'file-saver'
 import FileInput from './UI/fileInput/FileInput';
 
-const Image = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
-// TODO
-// наладить функционал сохранения
-// предусмотреть загрузку ТОЛЬКО изображений
-    const saveImage = () => {//функция сохранения на пк отредактированного фото
-        const link = document.createElement('a')
-        link.download = 'image_edit.jpg'
-        link.href = URL.createObjectURL(selectedImage)
-        link.click()
-    }
-
+const Image = ({ image, setImage, imageStyle }) => { 
     const selectImage = (image) => {
-        setSelectedImage(image)
+        setImage(image)
     } 
 
     return (
         <div className='imageContainer'>
         
-        {selectedImage 
+        {image 
             ?//если выбрано изображение
-            <div>
+            <div> 
             <img 
-                alt="not found"          
-                src={URL.createObjectURL(selectedImage)}
-                max-width={'100%'}
-                height={'auto'}
-                max-height={'100%'}
+                id='image'
+                alt='not found'          
+                src={URL.createObjectURL(image)} 
+                style={imageStyle}             
             />
             {/*скачать картинку обратно на пк*/}
             </div>
