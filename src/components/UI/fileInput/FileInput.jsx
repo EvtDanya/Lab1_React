@@ -1,16 +1,20 @@
 import React from 'react';
 import classes from './FileInput.module.css';
 
-const FileInput = ({children, ...props}) => {
+const FileInput = ({select, children, ...props}) => {
+   
+    const inputChanged = (e) => {
+        select(e.target.files[0])
+    }
+
     return (
         <input 
         type='file' 
         accept="image/*"
         {...props} 
-        className={classes.slider}>
-        {/* onChange={(event) => {
-        setSelectedImage(event.target.files[0]);
-        }} */}
+        className={classes.slider}
+        onChange={inputChanged}
+        >
             {children}
         </input>
     );

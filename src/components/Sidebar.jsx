@@ -24,7 +24,6 @@ const Sidebar = () => {
             <h1 className='textSideBar'>File</h1>
             <ButtonWithIco type='saveBtn' />
             <ButtonWithIco type='delBtn' onClick={delConfirmation} />
-            
         </div>
     );
 };

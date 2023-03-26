@@ -14,6 +14,10 @@ const Image = () => {
         link.click()
     }
 
+    const selectImage = (image) => {
+        setSelectedImage(image)
+    } 
+
     return (
         <div className='imageContainer'>
         
@@ -29,8 +33,9 @@ const Image = () => {
             />
             {/*скачать картинку обратно на пк*/}
             </div>
+            
             ://иначе отобразить инпут
-            <FileInput/>
+            <FileInput select={selectImage}/>
         }      
     </div>
     );
