@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import Slider from './UI/slider/Slider';
 
-const SliderBar = ({ values, sliderCurrVal, setSliderCurrVal }) => {
+const SliderBar = ({ tool, changeCurrentValue, sliderCurrVal, setSliderCurrVal }) => {
 
     return (
         // Слайдер, для регулировки, например, яркости изображения(при активном инструменте)
         <div className='sliderBar'>
-            {values//если фильтр уже выбран и данные получены, отображать активированный слайдер
+            {tool//если фильтр уже выбран и данные получены, отображать активированный слайдер
                 ?
                 <div>
-                <label className='valueLabel'>{values.min}</label>
+                <label className='valueLabel'>{tool.values.min}</label>
                 <Slider 
-                    min={values.min}
-                    max={values.max}
+                    min={tool.values.min}
+                    max={tool.values.max}
                     value={sliderCurrVal}
-                    onChange={(e)=>{setSliderCurrVal(e.target.value)}}
+                    onChange={(e)=>{
+                        changeCurrentValue(e.target.value)
+                        setSliderCurrVal(e.target.value)
+                        }}
                 />
-                <label className='valueLabel'>{values.max}</label>
+                <label className='valueLabel'>{tool.values.max}</label>
                 <label className='currentValueLabel'>Current: {sliderCurrVal}</label>
                 
                 </div>

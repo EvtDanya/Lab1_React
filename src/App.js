@@ -8,7 +8,6 @@ import { saveAs } from 'file-saver'
 function App() {
   //TODO:
   //Добавить изменение значения currentValue в списке инструментов, через хуки(общий TOOL и с конкретным индексом)
-  //рефакторинг, если возможно
   
   const TOOLS = [ //инструменты для редактирования фото с описанием
     {
@@ -34,10 +33,9 @@ function App() {
   ]
 
   const [selectedImage, setSelectedImage] = useState(null)// фото
-  const [values, setValues] = useState(null)// для слайдера
   const [tools, setTools] = useState(TOOLS)
-  const [selectedTool, setSelectedTool] = useState(0)//выбранный инструмент редактирования
-  const [sliderCurrVal, setSliderCurrVal] = useState(TOOLS[selectedTool].currentValue)//текущее значение для слайдера
+  const [selectedTool, setSelectedTool] = useState(null)//выбранный инструмент редактирования
+  const [sliderCurrVal, setSliderCurrVal] = useState(0)//текущее значение для слайдера
 
   const saveImage = () => {//функция сохранения на пк отредактированного фото
     if (selectedImage) 
@@ -54,24 +52,30 @@ function App() {
   }
 
   useEffect(() => {//Функция подтверждения выхода или обновления страницы
-    window.addEventListener("beforeunload", alertUser)
+    window.addEventListener('beforeunload', alertUser)
     return () => {
-      window.removeEventListener("beforeunload", alertUser)
+      window.removeEventListener('beforeunload', alertUser)
     }
   }, [])
 
   const alertUser = (e) => {
     e.preventDefault()
-    e.returnValue = ""
+    e.returnValue = ''
+  }
+
+  const changeCurrentValue = (newValue) => {
+      let toolsCopy = tools
+      toolsCopy[selectedTool].currentValue=newValue
+      setTools(toolsCopy)
+      //tools[selectedTool].currentValue=newValue
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <Sidebar 
         delImage={delImage}
         saveImage={saveImage}
-        tools={TOOLS}
-        setValues={setValues}
+        tools={tools}
         setSelectedTool={setSelectedTool}
         setSliderCurrVal={setSliderCurrVal}
       />
@@ -80,9 +84,10 @@ function App() {
         setImage={setSelectedImage}
       />
       <SliderBar 
-        values={values}
+        tool={tools[selectedTool]}
         sliderCurrVal={sliderCurrVal}
-        setSliderCurrVal={setSliderCurrVal}  
+        setSliderCurrVal={setSliderCurrVal}
+        changeCurrentValue={changeCurrentValue} 
         />
     </div>
   );

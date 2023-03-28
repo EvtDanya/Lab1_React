@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonWithIco from './UI/button/ButtonWithIco';
 
-const Sidebar = ({ delImage, saveImage, tools, setValues, setSelectedTool, setSliderCurrVal }) => {
+const Sidebar = ({ delImage, saveImage, tools, setSelectedTool, setSliderCurrVal }) => {
    
     const delConfirmation = () => {//удаление
         if (window.confirm('Are you sure you want to delete this item?'))
@@ -10,8 +10,7 @@ const Sidebar = ({ delImage, saveImage, tools, setValues, setSelectedTool, setSl
 
     const selectTool = (e) => {
         setSelectedTool(e.currentTarget.id)//выбрать айди текущего фильтра
-        setSliderCurrVal(tools[e.currentTarget.id].currentValue)// добавить для слайдера текущее значение у фильтра
-        setValues(tools[e.currentTarget.id].values)// отправить в компонент со слайдером информацию о единицах
+        setSliderCurrVal(tools[e.currentTarget.id].currentValue)// отправить в компонент со слайдером информацию о единицах
     }
 
     return (
