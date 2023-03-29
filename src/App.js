@@ -5,10 +5,7 @@ import Image from './components/Image';
 import SliderBar from './components/SliderBar';
 import { saveAs } from 'file-saver'
 
-function App() {
-  //TODO:
-  //Добавить изменение значения currentValue в списке инструментов, через хуки(общий TOOL и с конкретным индексом)
-  
+function App() { 
   const TOOLS = [ //инструменты для редактирования фото с описанием
     {
         name: 'brightness',
@@ -34,6 +31,7 @@ function App() {
 
   const [selectedImage, setSelectedImage] = useState(null)// фото
   const [tools, setTools] = useState(TOOLS)
+  const [imageStyle, setImageStyle] = useState(null)
   const [selectedTool, setSelectedTool] = useState(null)//выбранный инструмент редактирования
   const [sliderCurrVal, setSliderCurrVal] = useState(0)//текущее значение для слайдера
 
@@ -70,6 +68,12 @@ function App() {
       //tools[selectedTool].currentValue=newValue
   }
 
+  const imgElement = React.useRef(null);
+
+  //убрать лишние хуки
+  //убрать лишние аргументы для компонентов
+  //selectedImage убрать или нет?
+
   return (
     <div className='App'>
       <Sidebar 
@@ -78,10 +82,14 @@ function App() {
         tools={tools}
         setSelectedTool={setSelectedTool}
         setSliderCurrVal={setSliderCurrVal}
+        innerRef={imgElement}
+        setImageStyle={setImageStyle}
       />
       <Image 
         image={selectedImage} 
+        imageStyle={imageStyle}
         setImage={setSelectedImage}
+        innerRef={imgElement}
       />
       <SliderBar 
         tool={tools[selectedTool]}

@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import FileInput from './UI/fileInput/FileInput';
 
-const Image = ({ image, setImage, imageStyle }) => { 
+const Image = ({ image, setImage, imageStyle, innerRef }) => { 
+
     const selectImage = (image) => {
         setImage(image)
     } 
 
     return (
-        <div className='imageContainer'>
-        
+        <div className='imageContainer'> 
         {image 
             ?//если выбрано изображение
             <div> 
@@ -17,11 +17,13 @@ const Image = ({ image, setImage, imageStyle }) => {
                 alt='not found'          
                 src={URL.createObjectURL(image)} 
                 style={imageStyle}             
+                ref={innerRef}
             />
             </div>
             ://иначе отобразить инпут
             <FileInput select={selectImage}/>
-        }      
+        }       
+        
     </div>
     );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './ButtonWithIco.module.css';
 
-
 const ButtonWithIco = ({type, children, ...props}) => {
     const icons = {
         'plusBtn':  require('./plus.png'),
@@ -23,9 +22,17 @@ const ButtonWithIco = ({type, children, ...props}) => {
             style={{'backgroundImage': 'url(' + icons[type] + ')'}}
             {...props} 
         > 
-            {children}  
+            {children}
+            <div className="tooltip ">
+                <p></p>
+            </div>  
         </button>
     );
 };
-
+{/* <div class="con-tooltip right">
+<p> Right </p>
+<div class="tooltip ">
+    <p>Churka<br/></p>
+</div>
+</div> */}
 export default ButtonWithIco;
