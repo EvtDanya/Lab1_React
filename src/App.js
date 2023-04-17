@@ -10,10 +10,10 @@ function App() {
     {
         name: 'brightness',
         description: 'brightness',
-        currentValue: 50,
+        currentValue: 100,
         values : {
             min: 0,
-            max: 100,
+            max: 200,
             unit: '%'
         }
     },
@@ -28,6 +28,7 @@ function App() {
       }
     },
   ]
+
 
   const [selectedImage, setSelectedImage] = useState(null)// фото
   const [tools, setTools] = useState(TOOLS)
@@ -65,6 +66,9 @@ function App() {
       let toolsCopy = tools
       toolsCopy[selectedTool].currentValue=newValue
       setTools(toolsCopy)
+      setImageStyle({
+        filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})` 
+      })
       //tools[selectedTool].currentValue=newValue
   }
 

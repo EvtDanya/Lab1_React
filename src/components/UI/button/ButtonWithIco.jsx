@@ -8,7 +8,10 @@ const ButtonWithIco = ({type, children, ...props}) => {
         'delBtn':  require('./delete.png'),
         'saveBtn':  require('./save.png'),
         'brightnessBtn':  require('./brightness.png'),
-        'blurBtn':  require('./blur.png')
+        'blurBtn':  require('./blur.png'),
+        'contrastBtn': require('./contrast.png'),
+        'grayscaleBtn': require('./grayscale.png'),
+        'sepiaBtn': require('./sepia.png')
     }
 
     let className = classes.btnWthIco
