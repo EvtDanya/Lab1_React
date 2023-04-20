@@ -2,7 +2,9 @@ import React from 'react';
 import classes from './FileInput.module.css';
 
 const FileInput = ({select, children, ...props}) => {
-   
+    const icons = {
+        'imageBtn':  require('./image.png')
+    }
     const inputChanged = (e) => {
         select(e.target.files[0])
     }

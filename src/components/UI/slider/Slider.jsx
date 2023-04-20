@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Slider.module.css';
 
-const Slider = ({min, max, value, handleChange, children, ...props}) => {
+const Slider = ({min, max, value,  handleChange, children, ...props}) => {
     return (
         <input 
             type='range' 

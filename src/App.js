@@ -27,6 +27,36 @@ function App() {
           unit: 'px'
       }
     },
+    {
+      name: 'contrast',
+      description: 'contrast',
+      currentValue: 100,
+      values : {
+          min: 0,
+          max: 200,
+          unit: '%'
+      }
+    },
+    {
+      name: 'grayscale',
+      description: 'grayscale',
+      currentValue: 0,
+      values : {
+          min: 0,
+          max: 100,
+          unit: '%'
+      }
+    },
+    {
+      name: 'sepia',
+      description: 'sepia',
+      currentValue: 0,
+      values : {
+          min: 0,
+          max: 100,
+          unit: '%'
+      }
+    },
   ]
 
 

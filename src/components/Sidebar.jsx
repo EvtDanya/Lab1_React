@@ -13,6 +13,7 @@ const Sidebar = ({ delImage, saveImage, tools, setSelectedTool, setSliderCurrVal
         setSliderCurrVal(tools[e.currentTarget.id].currentValue)// отправить в компонент со слайдером информацию о единицах
     }
 
+
     const increaseSizeOfImage = () => {
         if (innerRef.current)
         {

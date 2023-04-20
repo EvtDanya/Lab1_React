@@ -5,5 +5,3 @@ Then just replace "src" and "public" directories with presented in this reposito
 Good luck!
 ### Opportunities
 Appear in near future
-
-test change fjhghsdkxfhgkdjsfhgsudfghiers

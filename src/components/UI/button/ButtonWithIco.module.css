@@ -3,7 +3,7 @@
     position: relative;
     font-size: 14px;
     background: transparent;
-    border: 2px solid #aeaaaa;
+    border: 2px solid #aeb4d4;
     cursor: pointer;
     width: 80%;
     height: 7%;
@@ -29,9 +29,9 @@
 } */
 
 .delBtn {
-    background-color: rgb(226, 0, 0);
+    background-color: rgb(251, 69, 69);
 }
 
 .saveBtn {
-    background-color: rgb(1, 225, 1);
+    background-color: rgb(114, 239, 114);
 }

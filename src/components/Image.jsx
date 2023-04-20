@@ -18,6 +18,7 @@ const Image = ({ image, setImage, imageStyle, innerRef }) => {
                 src={URL.createObjectURL(image)} 
                 style={imageStyle}             
                 ref={innerRef}
+                
             />
             </div>
             ://иначе отобразить инпут
