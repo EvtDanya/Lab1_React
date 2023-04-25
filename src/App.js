@@ -96,10 +96,15 @@ function App() {
       let toolsCopy = tools
       toolsCopy[selectedTool].currentValue=newValue
       setTools(toolsCopy)
-      setImageStyle({
-        filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})` 
-      })
-      //tools[selectedTool].currentValue=newValue
+      if (imageStyle != null)
+        setImageStyle(imageStyle => ({
+          ...imageStyle,
+          filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})`
+        }));
+      else
+        setImageStyle({
+          filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})`
+        })
   }
 
   const imgElement = React.useRef(null);
