@@ -1,3 +1,20 @@
 .fileInput {
-    border: 4px solid rgb(156, 138, 255);
+    display: none;
+}
+
+.fileInputBtn {
+    background-color: rgb(134, 134, 134);
+    border: 2px solid rgb(104, 102, 102);
+
+    color: #333;
+
+    padding: 10px 20px;
+    border-radius: 12px;
+    
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fileInputBtn:hover {
+    background-color: #ddd;
 }

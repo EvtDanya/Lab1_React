@@ -20,18 +20,4 @@
     transition: all 0.3s ease-in-out;
 } 
 
-.lensBtn:active {
-    
-}
 
-/* .btnWthIco:active {
-    margin-left:50px;
-} */
-
-.delBtn {
-    background-color: rgb(251, 69, 69);
-}
-
-.saveBtn {
-    background-color: rgb(114, 239, 114);
-}

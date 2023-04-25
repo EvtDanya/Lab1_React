@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FileInput from './UI/fileInput/FileInput';
 
 const Image = ({ image, setImage, imageStyle, innerRef }) => { 

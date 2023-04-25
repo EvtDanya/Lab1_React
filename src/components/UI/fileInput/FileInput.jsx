@@ -2,23 +2,31 @@ import React from 'react';
 import classes from './FileInput.module.css';
 
 const FileInput = ({select, children, ...props}) => {
-    const icons = {
-        'imageBtn':  require('./image.png')
-    }
     const inputChanged = (e) => {
         select(e.target.files[0])
     }
+    
+      const chooseImageBtnClick = () => {
+        document.getElementById('imageInput').click();
+    }
 
     return (
+        <div>
         <input 
-            type='file' 
-            accept="image/*"
+            id="imageInput" 
+            type="file" 
+            accept="image/*" 
+            className ={classes.fileInput}
+            onChange={inputChanged} 
             {...props} 
-            className={classes.slider}
-            onChange={inputChanged}
+        />
+        <button 
+            className ={classes.fileInputBtn} 
+            onClick={chooseImageBtnClick}
         >
-            {children}
-        </input>
+            Upload Image
+        </button>
+      </div>
     );
 };
 

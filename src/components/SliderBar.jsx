@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Slider from './UI/slider/Slider';
 
 const SliderBar = ({ tool, changeCurrentValue, sliderCurrVal, setSliderCurrVal }) => {
