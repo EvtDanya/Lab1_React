@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar';
 import Image from './components/Image';
 import SliderBar from './components/SliderBar';
 import { saveAs } from 'file-saver'
+import axios from 'axios';
 
 function App() { 
   const TOOLS = [ //инструменты для редактирования фото с описанием
@@ -65,14 +66,27 @@ function App() {
   const [imageStyle, setImageStyle] = useState(null)
   const [selectedTool, setSelectedTool] = useState(null)//выбранный инструмент редактирования
   const [sliderCurrVal, setSliderCurrVal] = useState(0)//текущее значение для слайдера
-
-  const saveImage = () => {//функция сохранения на пк отредактированного фото
-    if (selectedImage) 
-      saveAs(URL.createObjectURL(selectedImage), 'image.jpg')
+  
+ 
+ const saveImage = () => {//функция сохранения на пк отредактированного фото
+    if (selectedImage) {
+      saveAs(URL.createObjectURL(selectedImage), 'image.jpg');
+      const formData = new FormData();
+      formData.append('image', selectedImage);
+  
+      axios.post('http://217.71.129.139:5359/api/upload-image', formData)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      }
     else 
       alert('There is nothing to save')
   }
 
+  
   const delImage = () => {//функция удаления картинки с проверкой
     if (!selectedImage) 
       alert('There is nothing to delete')
@@ -103,15 +117,12 @@ function App() {
         }));
       else
         setImageStyle({
-          filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})`
+          filter: `${tools[selectedTool].name}(${newValue}${tools[selectedTool].values.unit})` 
         })
+
   }
 
   const imgElement = React.useRef(null);
-
-  //убрать лишние хуки
-  //убрать лишние аргументы для компонентов
-  //selectedImage убрать или нет?
 
   return (
     <div className='App'>
